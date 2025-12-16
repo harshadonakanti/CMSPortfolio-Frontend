@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import AdminSidebar from "../components/Dashboard/AdminSidebar";
-import UserInfo from "./Admin/Userinfo";
-import AboutPage from "./Admin/AboutPage";
-import SkillsPage from "./Admin/SkillsPage";
-import ProjectsPage from "./Admin/ProjectsPage";
+
+import UserInfo from "./Admin/Userinfo.jsx";
+import AboutPage from "./Admin/AboutPage.jsx";
+import SkillsPage from "./Admin/SkillsPage.jsx";
+import ProjectsPage from "./Admin/ProjectsPage.jsx";
+
 
 const Admin = () => {
   const [activeSection, setActiveSection] = useState("userinfo");
