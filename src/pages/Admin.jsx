@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AdminSidebar from "../components/Dashboard/AdminSidebar";
-import UserInfo from "./Admin/UserInfo";
+import UserInfo from "./Admin/Userinfo";
 import AboutPage from "./Admin/AboutPage";
 import SkillsPage from "./Admin/SkillsPage";
 import ProjectsPage from "./Admin/ProjectsPage";
