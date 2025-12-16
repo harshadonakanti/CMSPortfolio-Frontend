@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { fetchAbout } from "../services/api";
 import axios from "axios";
 import { motion } from "framer-motion";
 import myPic from "../assets/photo.jpg";
