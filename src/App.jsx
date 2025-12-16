@@ -7,10 +7,10 @@ import AdminLogin from "./pages/AdminLogin";
 import PrivateRoutes from "./utils/PrivateRoutes";
 
 // Admin Pages
-import UserInfo from "./pages/Admin/UserInfo";
-import AboutPage from "./pages/Admin/AboutPage";
-import SkillsPage from "./pages/Admin/SkillsPage";
-import ProjectsPage from "./pages/Admin/ProjectsPage";
+import UserInfo from "./pages/Admin/Userinfo.jsx";
+import AboutPage from "./pages/Admin/AboutPage.jsx";
+import SkillsPage from "./pages/Admin/SkillsPage.jsx";
+import ProjectsPage from "./pages/Admin/ProjectsPage.jsx";
 
 const App = () => {
   const location = useLocation();
