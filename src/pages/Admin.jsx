@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import AdminSidebar from "../components/Dashboard/AdminSidebar";
 
-import UserInfo from "./Admin/Userinfo.jsx";
+import UserInfo from "./Admin/UserInfo.jsx";
+
 import AboutPage from "./Admin/AboutPage.jsx";
 import SkillsPage from "./Admin/SkillsPage.jsx";
 import ProjectsPage from "./Admin/ProjectsPage.jsx";
+
 
 
 const Admin = () => {
