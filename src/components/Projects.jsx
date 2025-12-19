@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { API_BASE_URL } from "../config/api";
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/projects");
+      const response = await axios.get(`${API_BASE_URL}/api/projects`);;
       if (response.data.success) {
         setProjects(response.data.data);
       }
@@ -47,7 +47,7 @@ const Projects = () => {
             >
               {project.image && (
                 <img
-                  src={`http://localhost:3000/uploads/${project.image}`}
+                  src={`${API_BASE_URL}/uploads/${project.image}`}
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />

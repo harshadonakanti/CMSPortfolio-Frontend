@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { API_BASE_URL } from "../../config/api";
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
   const [form, setForm] = useState({
@@ -12,7 +12,7 @@ const ProjectsPage = () => {
   const token = localStorage.getItem("token");
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/projects");
+      const res = await axios.get(`${API_BASE_URL}/api/projects`);
       setProjects(res.data.data);
     } catch (err) {
       console.error(err);
@@ -39,7 +39,7 @@ const ProjectsPage = () => {
     if (form.image) fd.append("image", form.image);
 
     try {
-      await axios.post("http://localhost:3000/api/projects/create", fd, {
+      await axios.post(`${API_BASE_URL}/api/projects/create`, fd, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +59,7 @@ const ProjectsPage = () => {
   };
   const deleteProject = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/projects/${id}`, {
+      await axios.delete(`${API_BASE_URL}/api/projects/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchProjects();
@@ -143,7 +143,7 @@ const ProjectsPage = () => {
           >
             {p.image && (
               <img
-                src={`http://localhost:3000/uploads/${p.image}`}
+                src={`${API_BASE_URL}/uploads/${p.image}`}
                 className="h-48 w-full object-cover"
                 alt="project"
               />

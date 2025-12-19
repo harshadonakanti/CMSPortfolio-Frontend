@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import { API_BASE_URL } from "../config/api";
 const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +17,7 @@ const AdminLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/admin-login",
+        `${API_BASE_URL}/api/auth/admin-login`,
         { username, password }
       );
 

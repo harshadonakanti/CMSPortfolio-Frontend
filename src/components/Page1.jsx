@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-
+import { API_BASE_URL } from "../config/api";
 const Page1 = () => {
   const [info, setInfo] = useState(null);
 
   useEffect(() => {
     const fetchInfo = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/userinfo");
+        const res = await axios.get(`${API_BASE_URL}/api/userinfo`);
 
         if (res.data.success) {
           setInfo(res.data.data);
@@ -75,7 +75,7 @@ const Page1 = () => {
           <div className="md:w-1/2 flex justify-center">
             <div className="relative w-48 h-48 md:w-80 md:h-80">
               <img
-                src={`http://localhost:3000/uploads/${info.image}`}
+                src={`${API_BASE_URL}/uploads/${info.image}`}
                 className="imgS rounded-full h-full w-full hover:scale-110 transition duration-300 object-cover z-10"
                 alt={info.name}
               />

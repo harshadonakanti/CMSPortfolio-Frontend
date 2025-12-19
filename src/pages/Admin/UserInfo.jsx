@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { API_BASE_URL } from "../../config/api";
 const UserInfo = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,7 +18,7 @@ const UserInfo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/userinfo", {
+        const res = await axios.get(`${API_BASE_URL}/api/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -71,7 +71,7 @@ const UserInfo = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/userinfo/save",
+        `${API_BASE_URL}/api/userinfo/save`,
         fd,
         {
           headers: {
@@ -102,7 +102,7 @@ const UserInfo = () => {
           <div className="flex flex-col items-center">
             {!previewImage && existingImage && (
               <img
-                src={`http://localhost:3000/uploads/${existingImage}`}
+                src={`${API_BASE_URL}/uploads/${existingImage}`}
                 className="w-32 h-32 rounded-full object-cover border shadow mb-3"
                 alt="Existing"
               />

@@ -3,6 +3,7 @@ import { fetchAbout } from "../services/api";
 import axios from "axios";
 import { motion } from "framer-motion";
 import myPic from "../assets/photo.jpg";
+import { API_BASE_URL } from "../config/api";
 
 const About = () => {
   const [description, setDescription] = useState("");
@@ -10,7 +11,7 @@ const About = () => {
   useEffect(() => {
     const fetchAbout = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/about");
+        const res = await axios.get(`${API_BASE_URL}/api/about`);
         if (res.data.success && res.data.data) {
           setDescription(res.data.data.description);
         }

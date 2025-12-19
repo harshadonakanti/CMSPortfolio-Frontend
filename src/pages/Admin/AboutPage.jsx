@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { API_BASE_URL } from "../../config/api";
 const AboutPage = () => {
   const [description, setDescription] = useState("");
   const token = localStorage.getItem("token");
   useEffect(() => {
     const loadAbout = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/about");
+        const res = await axios.get(`${API_BASE_URL}/api/about`);
         if (res.data.success && res.data.data) {
           setDescription(res.data.data.description);
         }
@@ -23,7 +23,7 @@ const AboutPage = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/about/save",
+        `${API_BASE_URL}/api/about/save`,
         { description },
         { headers: { Authorization: `Bearer ${token}` } }
       );
